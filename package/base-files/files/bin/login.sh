@@ -8,12 +8,8 @@ then
 	echo "Login failed."
 	exit 0
 else
-cat << EOF
- === IMPORTANT ============================
-  Use 'passwd' to set your login password
-  this will disable telnet and enable SSH
- ------------------------------------------
-EOF
+    busybox login
+    exit 0
 fi
 
 exec /bin/ash --login
